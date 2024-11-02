@@ -1,4 +1,4 @@
-import pytest
+from pytest import fixture
 from playwright.sync_api import Browser, BrowserContext, Page, sync_playwright
 import os
 
@@ -16,7 +16,7 @@ def pytest_addoption(parser):
 
 
 
-@pytest.fixture(scope='class')
+@fixture(scope='class')
 def browser(request) -> Page: # type: ignore
     playwright = sync_playwright().start()
     if request.config.getoption("bn") == 'remote_chrome':
@@ -88,6 +88,6 @@ def get_context(browser, request, start) -> BrowserContext:
 
 
 
-@pytest.fixture(scope="function")
+@fixture(scope="function")
 def return_back(browser):
     browser.go_back()
