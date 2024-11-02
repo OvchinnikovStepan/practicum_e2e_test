@@ -1,7 +1,7 @@
 import pytest
 from pages.market_main_page import MarketPage
 
-
+@pytest.mark.regression
 @pytest.mark.usefixtures('user_login')
 class TestRemoveProduct:
     def test_remove_product(self, browser):
