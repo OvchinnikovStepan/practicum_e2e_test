@@ -21,7 +21,6 @@ class Main(Base):
         self.input(Auth.USERNAME_INPUT, username)
         self.input(Auth.PASSWORD_INPUT, password)
         self.click(Auth.LOGIN_BTN)
-       # https://www.saucedemo.com/inventory.html
-       #Epic sadface: Username is required
+        
     def check_error(self,error_text):
         self.assertion.have_text(Auth.LOGIN_ERROR_CASE_TEXT,error_text,"fail")
