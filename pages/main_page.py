@@ -16,3 +16,10 @@ class Main(Base):
         self.click(Auth.LOGIN_BTN)
         self.assertion.check_URL("inventory.html", "Wrong URL")
 
+    def user_login_custom(self,username="",password=""):
+        self.open("")
+        self.input(Auth.USERNAME_INPUT, username)
+        self.input(Auth.PASSWORD_INPUT, password)
+        self.click(Auth.LOGIN_BTN)
+       # https://www.saucedemo.com/inventory.html
+       #Epic sadface: Username is required
