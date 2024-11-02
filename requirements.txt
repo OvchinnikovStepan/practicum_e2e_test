@@ -1,4 +1,4 @@
-��a��a��a��a��aattrs==24.2.0
+attrs==24.2.0
 certifi==2024.8.30
 charset-normalizer==3.3.2
 colorama==0.4.6
