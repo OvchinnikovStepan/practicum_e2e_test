@@ -1,7 +1,8 @@
 from pages.main_page import Main
 from data.constants import Constants
-
-class TestLogin:
+import pytest
+@pytest.mark.regression
+class TestLoginEmpty:
     def test_user_login(self, browser):
         m = Main(browser)
         m.user_login_custom()

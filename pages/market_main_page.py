@@ -26,5 +26,5 @@ class MarketPage(Base):
         self.click(Basket.FINISH_BTN)
         self.assertion.have_text(Basket.FINAL_TEXT, "Checkout: Complete!", "no")
 
-    def check_number_of_product_in_buscet(self,number):
+    def check_number_of_product_in_busket(self,number):
         self.assertion.have_text(Market.NUMBER_OF_GOODS, str(number), "no")
