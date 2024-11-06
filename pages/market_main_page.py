@@ -17,5 +17,14 @@ class MarketPage(Base):
     def to_basket(self):
         self.click(Market.FOLLOW_TO_BASKET)
 
+    # def checkout(self): 
+    #     self.click(Basket.CHECKOUT_BTN)
+    #     self.input(Basket.FIRST_NAME, "Ivan")
+    #     self.input(Basket.LAST_NAME, "Ivanov")
+    #     self.input(Basket.ZIP, "123456")
+    #     self.click(Basket.CNT_BTN)
+    #     self.click(Basket.FINISH_BTN)
+    #     self.assertion.have_text(Basket.FINAL_TEXT, "Checkout: Complete!", "no")
+
     def check_number_of_product_in_busket(self,number):
         self.assertion.have_text(Market.NUMBER_OF_GOODS, str(number), "no")
