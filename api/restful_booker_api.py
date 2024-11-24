@@ -32,3 +32,8 @@ class RestfulBookerApi(Api):
     def restful_delete(self, booking_id: int, token: str):
         return self.delete(url=self._URL,
                            endpoint=self._ENDPOINT_BOOKING + str(booking_id),headers={'token':f'token={token}'})
+    
+    @allure.step('Обращение к get')
+    def restful_get(self, user_id: int):
+        return self.get(url=self._URL,
+                        endpoint=self._ENDPOINT_BOOKING + str(user_id))

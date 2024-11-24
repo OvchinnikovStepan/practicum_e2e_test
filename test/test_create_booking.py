@@ -16,4 +16,9 @@ def test_auth_valid_parameters(restful_api, request_params,api_token):
         json_schema_should_be_valid('create_booking_schema').\
         have_value_in_response_parameter(['booking'], request_params.to_dict())
     
-    restful_api.restful_delete(restful_api.get_payload(["bookingid"]),api_token).status_code_should_be(200)
+    id = restful_api.get_payload(["bookingid"])
+    restful_api.restful_get(id).\
+        have_value_in_response_parameter([],request_params.to_dict())
+
+    restful_api.restful_delete(id,api_token).status_code_should_be(200)
+    
