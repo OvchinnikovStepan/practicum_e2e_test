@@ -50,8 +50,7 @@ schema = {
     "lastname",
     "totalprice",
     "depositpaid",
-    "bookingdates",
-    "additionalneeds"
+    "bookingdates"
   ]
 }
     },

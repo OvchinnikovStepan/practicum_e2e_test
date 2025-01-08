@@ -35,6 +35,12 @@ class RestfulBookerApi(Api):
                          endpoint=self._ENDPOINT_BOOKING,
                          json_body=param_request_body.to_dict())
     
+    @allure.step('Обращение к post в свободной форме')
+    def restful_create_from_dict(self,param_request_body):
+        return self.post(url=self._URL,
+                         endpoint=self._ENDPOINT_BOOKING,
+                         json_body=param_request_body)
+    
     @allure.step('Обращение к delete')
     def restful_delete(self, booking_id: int, token: str):
         return self.delete(url=self._URL,
