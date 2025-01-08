@@ -1,7 +1,7 @@
 import pytest
 import requests
 from api.restful_booker_api import RestfulBookerApi
-from data.auth_data import data
+from data.auth_data_fixture import data
 @pytest.fixture(scope="function")
 def api_token() -> str:
     # Задайте URL и данные для авторизации

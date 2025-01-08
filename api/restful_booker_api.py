@@ -22,6 +22,13 @@ class RestfulBookerApi(Api):
     #    _TOKEN=api.get_payload(['token'])
         return api
     
+    @allure.step('Обращение к auth в свободной форме')
+    def restful_auth_from_dict(self, param_request_body):
+        api=self.post(url=self._URL,
+                         endpoint=self._ENDPOINT_AUTH,
+                         json_body=param_request_body)
+        return api
+    
     @allure.step('Обращение к post')
     def restful_create(self,param_request_body: RequestCreateModel):
         return self.post(url=self._URL,

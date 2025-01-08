@@ -14,3 +14,9 @@ pytestmark = [allure.parent_suite("restful"),
 def test_auth_valid_parameters(restful_api, request_params):
     restful_api.restful_auth(request_params).status_code_should_be(200).\
         json_schema_should_be_valid('auth_schema')
+    
+@allure.title('Некорректный запрос на авторизацию')
+@pytest.mark.parametrize('request_params',
+                         load_data('auth_data','bad_data'))
+def test_auth_not_valid_parameters(restful_api, request_params):
+    restful_api.restful_auth_from_dict(request_params).status_code_should_be(400)
