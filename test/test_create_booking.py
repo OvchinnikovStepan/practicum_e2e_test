@@ -26,4 +26,5 @@ def test_auth_valid_parameters(restful_api, request_params,api_token):
 @pytest.mark.parametrize('request_params',
                          load_data('create_booking_data','bad_data'))
 def test_auth_not_valid_parameters(restful_api, request_params,api_token):
-    restful_api.restful_create_from_dict(request_params).status_code_should_be(400)
+    req=restful_api.restful_create_from_dict(request_params)
+    req.status_code_should_be(400)
